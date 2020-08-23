@@ -5,13 +5,7 @@ body {
   width: 100wh;
   height: 90vh;
   display: block; 
-background-color: #637081;
-background-image: linear-gradient(315deg, #637081 0%, #7c98b3 74%);
-	background-size: 400% 400%;
-	background-attachment:fixed;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;*/
+background-color: #000000;
 }
 
 canvas {
@@ -106,7 +100,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 90px;
 }
 
 .link {
