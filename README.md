@@ -1,3 +1,3 @@
-# karlwhite247.github.io
+# karlwhite.github.io
 
 Personal Website
