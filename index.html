@@ -1,647 +1,662 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-<meta name='viewport' content='width=device-width, initial-scale=1'><script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	
-<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
-<meta name="apple-mobile-web-app-title" content="CodePen">
-	
-<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
-	
-<title>My Personal Portfolio - created by Karl White</title>
-	
-<style>
-@import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Press+Start+2P'); 
+  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+  <meta name="apple-mobile-web-app-title" content="CodePen">
 
-body {
-	color: #fff; 
-  width: 100wh;
-  height: 90vh;
-  display: block; 
-  background-color: #000000;
-} 
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
 
-canvas {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-  
-#particles-js {
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 5%;
-}
+  <title>My Personal Portfolio - created by Karl White</title>
 
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Press+Start+2P');
 
-.header {
-  justify-content: space-between;
-}
-
-.info {
-  display: flex;
-  flex-direction: column;
-  font-family: "Libre Franklin";
-  font-size: 1.25em;
-}
-
-.info h1 {
-  margin: 0;
-  padding: 10px;
-  margin-left: 30px;
-  font-size: 35px;
-  font-family: "Libre Franklin";
-} 
-	
-.info h3, .info p  {
-  margin: 0;
-  padding: 10px;
-  margin-left: 30px;
-  font-size: 25px;
-  font-family: "Libre Franklin";
-} 
-
-a {
-  font-size: 25px;
-  font-family: calibri;
-  text-decoration: none;
-}
-
-.resume-block {
-  margin-right: 30px;
-}
-
-.resume {
-   font-size: 30px;
-   font-family: calibri;
-   border: 5px solid white;
-   background-color: none;
-   padding: 10px;
-   border-radius: 25px;
-}
-
-.resume:hover {
-  border: 5px solid black;
-  padding: 10px;
-}
-
-.resume a {
-  color: white;
-}
-
-.message {
-  font-size: 25px;
-  font-family: calibri;
-  text-decoration: none;
-  padding: 10px;
-  margin-left: 30px;
-}
-
-.wrap {
-  color: white;
-  display: inline-block;
-}
-
-.social {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 90px;
-}
-
-.link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.social-link {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  border-radius: 100%;
-  margin: 20px;
-}
-
-.social-link:hover {
-  border: 2px solid black;
-}
-
-.social-type {
-  font-family: "Libre Franklin";
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.typewriter h1 {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent
-}}
-  50% { border-color: orange; }
-</style>
-  
-  
-<script>
-  window.console = window.console || function(t) {};
-</script>
-<script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
-</head>
-<body translate="no">
-	
-	
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
-<meta name="apple-mobile-web-app-title" content="CodePen">
-<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
-<title>My Personal Portfolio - created by Karl White</title>
-<script>
-  window.console = window.console || function(t) {};
-</script>
-<script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
-</head>
-<body translate="no">
-<html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Karl White</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/app.css">
-<script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'>
-</script>
-<script src='js/app.js'></script>
-<style>
-	
- .fa, .fab {
-  width: 65px;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  border: 1.5px solid white;
-  }
-  
-.fa-artstation {
-  background:#dd1021;
-  color: white;
-}
-
-.fa-deviantart {
-  background:#3d4e42;
-  color: white;
-
-.fa-codepen {
-  background:#7851a9;
-  color: white;
-}
-	
-.fa-free-code-camp {
-  background:#00853e;
-  color: white;
-}
-
-.fa-github {
-  background:#ff6611;
-  color: white;
-}
-		
-.fa-linkedin {
-  background:#0072b1;
-  color: white;
-} 
-
-  </style>
-
-  </style>
-</head>
-
-<body id="particles-js">
-	<div class="container">
-		<div class="row header">
-			<div class="info">
-				<h3>Hi there!</h3>
-<h1>My name is Karl White</h1>
-		<p>I'm a versatile graphic designer and illustrator with a flare for creative writing</p>
-			</div>
-			
-<div class="resume-block">
-        <p class="resume"><a href="" target="_blank">Resume</a></p>
-			</div>
-		</div>
-<div class="row">
-<h2 class="message"><span>What value can I bring to your company? I have a real passion and talent for </span> 
-<a href="" class="typewrite" data-period="4000" data-type='[ "typography." , "logo design/branding." , "advertising." , "packaging design." , "visually communicating corporate identities." ]'>
-<span class="wrap"></span>
-</a>
-</h2>
-</div>
-  		
-<div class="row social">	
-	<div class="link"><a href="https://www.artstation.com/karlwhite/collections" target="_blank"><i class="social-link fab fa fa-artstation fa-2x"></i></a><span style="font-size: 20pt; font-weight: 600; font-family: arial" span class="social-type">ArtStation</span></div>
-	<div class="link"><a href="https://www.deviantart.com/" target="_blank"><i class="social-link fa fa-deviantart fa-2x" style="color:#05CC46; font-size: 20pt; font-weight: 600; font-family: arial"></i></a><span class="social-type">DeviantArt</span></div>
-	<div class="link"><a href="https://codepen.io/your-work/#_=_" target="_blank"><i class="social-link fa fa-codepen fa-2x"></i></a><span style="font-size: 20pt; font-weight: 600; font-family: arial" span class="social-type">Codepen</span></div>
-	<div class="link"><a href="https://www.freecodecamp.org/karlwhite247" target="_blank"><i class="social-link fa fa-free-code-camp fa-2x"></i></a><span style="font-size: 20pt; font-weight: 600; font-family: arial" span class="social-type">FreeCodeCamp</span></div>
-	<div class="link"><a href="https://github.com/karlwhite247" target="_blank"><i class="social-link fa fa-github fa-2x"></i></a><span style="font-size: 20pt; font-weight: 600; font-family: arial" span class="social-type">Github</span></div>
-	<div class="link"><a href="https://www.linkedin.com/in/karlwhite247/" target="_blank"><i class="social-link fa fa-linkedin fa-2x"></i></a><span style="font-size: 20pt; font-weight: 600; font-family: arial" span class="social-type">LinkedIn</span></div>
-	  </div> 
-	  </body>
-	</html>
-	
-<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-<script id="rendered-js">
-var TxtType = function (el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function () {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-  var that = this;
-  var delta = 200 - Math.random() * 100;
-
-  if (this.isDeleting) {delta /= 2;}
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
-
-  setTimeout(function () {
-    that.tick();
-  }, delta);
-};
-
-window.onload = function () {
-  var elements = document.getElementsByClassName('typewrite');
-  for (var i = 0; i < elements.length; i++) {if (window.CP.shouldStopExecution(0)) break;
-    var toRotate = elements[i].getAttribute('data-type');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
+    body {
+      color: #fff;
+      width: 100wh;
+      height: 90vh;
+      display: block;
+      background-color: #000000;
     }
-  }
 
-  // INJECT CSS
-  window.CP.exitedLoop(0);var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-  document.body.appendChild(css);
-};
-
-particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 400,
-      "density": {
-        "enable": true,
-        "value_area": 800 } },
-
-
-
-    "color": {
-      "value": "#fff" },
-
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000" },
-
-      "polygon": {
-        "nb_sides": 5 },
-
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100 } },
-
-
-    "opacity": {
-      "value": 0.5,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false } },
-
-
-    "size": {
-      "value": 10,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false } },
-
-
-    "line_linked": {
-      "enable": false,
-      "distance": 500,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 2 },
-
-    "move": {
-      "enable": true,
-      "speed": 6,
-      "direction": "bottom",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200 } } },
-
-
-
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "bubble" },
-
-      "onclick": {
-        "enable": true,
-        "mode": "repulse" },
-
-      "resize": true },
-
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 0.5 } },
-
-
-      "bubble": {
-        "distance": 400,
-        "size": 4,
-        "duration": 0.3,
-        "opacity": 1,
-        "speed": 3 },
-
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4 },
-
-      "push": {
-        "particles_nb": 4 },
-
-      "remove": {
-        "particles_nb": 2 } } },
-
-  "retina_detect": true });
-//# sourceURL=pen.js
-    </script>
-</body>
-</html>
-<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-<script id="rendered-js">
-var TxtType = function (el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function () {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
-  }
-
-  this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-  var that = this;
-  var delta = 200 - Math.random() * 100;
-
-  if (this.isDeleting) {delta /= 2;}
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
-  }
-
-  setTimeout(function () {
-    that.tick();
-  }, delta);
-};
-
-window.onload = function () {
-  var elements = document.getElementsByClassName('typewrite');
-  for (var i = 0; i < elements.length; i++) {if (window.CP.shouldStopExecution(0)) break;
-    var toRotate = elements[i].getAttribute('data-type');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
+    canvas {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
-  }
 
-  // INJECT CSS
-  window.CP.exitedLoop(0);var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-  document.body.appendChild(css);
-};
+    #particles-js {
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
 
-particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 400,
-      "density": {
-        "enable": true,
-        "value_area": 800 } },
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 5%;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .header {
+      justify-content: space-between;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      font-family: "Libre Franklin";
+      font-size: 1.25em;
+    }
+
+    .info h1 {
+      margin: 0;
+      padding: 10px;
+      margin-left: 30px;
+      font-size: 35px;
+      font-family: "Libre Franklin";
+    }
+
+    .info h3,
+    .info p {
+      margin: 0;
+      padding: 10px;
+      margin-left: 30px;
+      font-size: 25px;
+      font-family: "Libre Franklin";
+    }
+
+    a {
+      font-size: 25px;
+      font-family: calibri;
+      text-decoration: none;
+    }
+
+    .resume-block {
+      margin-right: 30px;
+    }
+
+    .resume {
+      font-size: 30px;
+      font-family: calibri;
+      border: 5px solid white;
+      background-color: none;
+      padding: 10px;
+      border-radius: 25px;
+    }
+
+    .resume:hover {
+      border: 5px solid black;
+      padding: 10px;
+    }
+
+    .resume a {
+      color: white;
+    }
+
+    .message {
+      font-size: 25px;
+      font-family: calibri;
+      text-decoration: none;
+      padding: 10px;
+      margin-left: 30px;
+    }
+
+    .wrap {
+      color: white;
+      display: inline-block;
+    }
+
+    .social {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-top: 90px;
+    }
+
+    .link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-link {
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+      border-radius: 100%;
+      margin: 5px;
+    }
+
+    .social-link:hover {
+      border: 2px solid black;
+    }
+
+    .social-type {
+      font-family: "Libre Franklin";
+      font-weight: bold;
+      font-size: 18px;
+    }
 
 
+    .typewriter h1 {
+      overflow: hidden;
+      /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid orange;
+      /* The typwriter cursor */
+      white-space: nowrap;
+      /* Keeps the content on a single line */
+      margin: 0 auto;
+      /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .15em;
+      /* Adjust as needed */
+      animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
 
-    "color": {
-      "value": "#fff" },
+    /* The typing effect */
+    @keyframes typing {
+      from {
+        width: 0
+      }
 
-    "shape": {
-      "type": "circle", 
-      "stroke": {
-        "width": 0,
-        "color": "#000000" },
+      to {
+        width: 100%
+      }
+    }
 
-      "polygon": {
-        "nb_sides": 5 },
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
 
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100 } },
+      from,
+      to {
+        border-color: transparent
+      }
+    }
 
+    50% {
+      border-color: orange;
+    }
+  </style>
+  <script>
+    window.console = window.console || function(t) {};
+  </script>
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage("resize", "*");
+    }
+  </script>
+</head>
 
-    "opacity": {
-      "value": 0.5,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false } },
+<body translate="no">
 
+  <!DOCTYPE html>
+  <html lang="en">
 
-    "size": {
-      "value": 10,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false } },
-
-
-    "line_linked": {
-      "enable": false,
-      "distance": 500,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 2 },
-
-    "move": {
-      "enable": true,
-      "speed": 6,
-      "direction": "bottom",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200 } } },
-
-
-
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "bubble" },
-
-      "onclick": {
-        "enable": true,
-        "mode": "repulse" },
-
-      "resize": true },
-
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 0.5 } },
-
-
-      "bubble": {
-        "distance": 400,
-        "size": 4,
-        "duration": 0.3,
-        "opacity": 1,
-        "speed": 3 },
-
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4 },
-
-      "push": {
-        "particles_nb": 4 },
-
-      "remove": {
-        "particles_nb": 2 } } },
-
-
-
-  "retina_detect": true });
-//# sourceURL=pen.js
+  <head>
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+    <title>My Personal Portfolio - created by Karl White</title>
+    <script>
+      window.console = window.console || function(t) {};
     </script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+  </head>
+
+  <body translate="no">
+    <html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <title>Karl White</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+      <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+      <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/app.css">
+      <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'>
+      </script>
+      <script src='js/app.js'></script>
+      <style>
+        .fa,
+        .fab {
+          padding: 20px;
+          font-size: 30px;
+          width: 40px;
+          text-align: center;
+          text-decoration: none;
+          border: 1px solid white;
+        }
+
+        .fa-artstation {
+          background: #dd1021;
+          color: white;
+        }
+
+        .fa-deviantart {
+          background: #ff6600;
+          color: white;
+        }
+
+        .fa-codepen {
+          background: #00704a;
+          color: white;
+        }
+
+        .fa-free-code-camp {
+          background: #152d3d;
+          color: white;
+        }
+
+        .fa-github {
+          background: #ff6611;
+          color: white;
+        }
+
+        .fa-linkedin {
+          background: #0072b1;
+          color: white;
+        }
+      </style>
+    </head>
+
+    <body id="particles-js">
+
+      <div class="container">
+        <div class="row header">
+          <div class="info">
+            <h3>Hi there!</h3>
+            <h1>My name is Karl White</h1>
+            <p>I'm a versatile graphic designer and illustrator with a flare for creative writing</p>
+          </div>
+
+          <div class="resume-block">
+            <p class="resume"><a href="" target="_blank">Resume</a></p>
+          </div>
+        </div>
+        <div class="row">
+          <h2 class="message"><span>What value can I bring to your company? I have a real passion and talent for </span>
+            <a href="" class="typewrite" data-period="4000" data-type='[ "typography." , "logo design/branding." , "advertising." , "packaging design." , "visually communicating corporate identities." ]'>
+              <span class="wrap"></span>
+            </a>
+          </h2>
+        </div>
+
+        <div class="row social">
+          <div class="link"><a href="https://www.artstation.com/karlwhite/collections" target="_blank"><i class="social-link fab fa-artstation fa-2x"></i></a><span class="social-type">ArtStation</span></div>
+          <div class="link"><a href="https://www.deviantart.com/" target="_blank"><i class="social-link fa fa-deviantart fa-2x"></i></a><span class="social-type">DeviantArt</span></div>
+          <div class="link"><a href="https://codepen.io/your-work/#_=_" target="_blank"><i class="social-link fa fa-codepen fa-2x"></i></a><span class="social-type">Codepen</span></div>
+          <div class="link"><a <div class="link"><a href="https://www.freecodecamp.org/karlwhite247" target="_blank"><i class="social-link fa fa-free-code-camp fa-2x"></i></a><span class="social-type">FreeCodeCamp</span></div>
+          <div class="link"><a href="https://github.com/karlwhite247" target="_blank"><i class="social-link fa fa-github fa-2x"></i></a><span class="social-type">Github</span></div>
+          <div class="link"><a href="https://www.linkedin.com/in/karlwhite247/" target="_blank"><i class="social-link fa fa-linkedin fa-2x"></i></a><span class="social-type">LinkedIn</span></div>
+        </div>
+    </body>
+
+    </html>
+
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+    <script id="rendered-js">
+      var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+      };
+      TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+        if (this.isDeleting) {
+          delta /= 2;
+        }
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+        setTimeout(function() {
+          that.tick();
+        }, delta);
+      };
+      window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i = 0; i < elements.length; i++) {
+          if (window.CP.shouldStopExecution(0)) break;
+          var toRotate = elements[i].getAttribute('data-type');
+          var period = elements[i].getAttribute('data-period');
+          if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+        // INJECT CSS
+        window.CP.exitedLoop(0);
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+      };
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 400,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#fff"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
+            }
+          },
+          "opacity": {
+            "value": 0.5,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 10,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": false,
+            "distance": 500,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 2
+          },
+          "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "bottom",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "bubble"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "repulse"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 400,
+              "line_linked": {
+                "opacity": 0.5
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 4,
+              "duration": 0.3,
+              "opacity": 1,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+      //# sourceURL=pen.js
+    </script>
+  </body>
+
+  </html>
+  <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+  <script id="rendered-js">
+    var TxtType = function(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+    TxtType.prototype.tick = function() {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+      if (this.isDeleting) {
+        delta /= 2;
+      }
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+      setTimeout(function() {
+        that.tick();
+      }, delta);
+    };
+    window.onload = function() {
+      var elements = document.getElementsByClassName('typewrite');
+      for (var i = 0; i < elements.length; i++) {
+        if (window.CP.shouldStopExecution(0)) break;
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      // INJECT CSS
+      window.CP.exitedLoop(0);
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+      document.body.appendChild(css);
+    };
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 400,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#fff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 10,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": false,
+          "distance": 500,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 2
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "bottom",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "bubble"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 0.5
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 4,
+            "duration": 0.3,
+            "opacity": 1,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+    //# sourceURL=pen.js
+  </script>
 </body>
+
 </html>
